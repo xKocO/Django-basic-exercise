@@ -3,9 +3,10 @@ from django.template import loader # type: ignore
 from .models import Member
 
 def testing(request):
+    mymembers = Member.objects.all()
     template = loader.get_template('template.html')
     context = {
-        'firstname' : 'Lucas'
+        'firstname' : mymembers[3].firstname,
     }
     return HttpResponse(template.render(context,request))
 
