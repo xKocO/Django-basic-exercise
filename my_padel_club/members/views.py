@@ -1,6 +1,13 @@
-from django.http import HttpResponse
-from django.template import loader
+from django.http import HttpResponse # type: ignore
+from django.template import loader # type: ignore
 from .models import Member
+
+def testing(request):
+    template = loader.get_template('template.html')
+    context = {
+        'firstname' : 'Lucas'
+    }
+    return HttpResponse(template.render(context,request))
 
 def main(request):
     template = loader.get_template('main.html')
