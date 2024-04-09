@@ -1,5 +1,5 @@
-from django.http import HttpResponse # type: ignore
-from django.template import loader # type: ignore
+from django.http import HttpResponse 
+from django.template import loader 
 from .models import Member
 
 def testing(request):
