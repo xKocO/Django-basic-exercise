@@ -3,11 +3,10 @@ from django.template import loader
 from .models import Member
 
 def testing(request):
-    mymembers = Member.objects.all()
-    singlemember = mymembers[2]
     template = loader.get_template('template.html')
     context = {
-        'singlemember' : singlemember,
+        'x' : ['manzana', 'naranja'],
+        'y' : ['manzana', 'naranja'],
     }
     return HttpResponse(template.render(context,request))
 
