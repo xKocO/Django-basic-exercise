@@ -4,9 +4,10 @@ from .models import Member
 
 def testing(request):
     mymembers = Member.objects.all()
+    singlemember = mymembers[2]
     template = loader.get_template('template.html')
     context = {
-        'firstname' : mymembers[3].firstname,
+        'singlemember' : singlemember,
     }
     return HttpResponse(template.render(context,request))
 
