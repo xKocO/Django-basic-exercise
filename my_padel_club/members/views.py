@@ -4,14 +4,14 @@ from .models import Member
 
 def testing1(request):
     mymembers = Member.objects.all()
-    template = loader.get_template('template_modeltest.html')
+    template = loader.get_template('template1.html')
     context = {
         'mymembers' : mymembers,
     }
     return HttpResponse(template.render(context,request))
 
 def testing(request):
-    template = loader.get_template('template_tagtest.html')
+    template = loader.get_template('template.html')
     context = {
         'x' : ['manzana', 'naranja'],
         'y' : ['manzana', 'naranja'],
