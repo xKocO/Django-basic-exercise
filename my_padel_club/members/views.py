@@ -2,8 +2,16 @@ from django.http import HttpResponse
 from django.template import loader 
 from .models import Member
 
+def testing1(request):
+    mymembers = Member.objects.all()
+    template = loader.get_template('template_modeltest.html')
+    context = {
+        'mymembers' : mymembers,
+    }
+    return HttpResponse(template.render(context,request))
+
 def testing(request):
-    template = loader.get_template('template.html')
+    template = loader.get_template('template_tagtest.html')
     context = {
         'x' : ['manzana', 'naranja'],
         'y' : ['manzana', 'naranja'],
