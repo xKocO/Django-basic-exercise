@@ -4,7 +4,7 @@ from .models import Member
 
 
 def testing(request):
-    mymembers = Member.objects.filter(firstname__startswith="G").values()
+    mymembers = Member.objects.order_by('firstname','Joined_date').values()
     template = loader.get_template("template.html")
     context = {
         "mymembers": mymembers,
