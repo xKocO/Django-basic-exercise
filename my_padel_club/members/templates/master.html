@@ -1,15 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>{% block title %}{% endblock %}</title>
-</head>
+  <head>
+    <link rel="stylesheet" href="{% static 'simplestyle.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
 
-<body>
+  <body>
 
-  {% block content %}
-  {% endblock %}
+    <div class="topnav">
+      <a href="/">HOME</a> |
+      <a href="/members">MEMBERS</a>
+    </div>
 
-</body>
+    {% block content %}
+    {% endblock %}
+
+  </body>
 
 </html>
